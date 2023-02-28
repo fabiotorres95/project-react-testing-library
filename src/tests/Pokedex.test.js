@@ -57,4 +57,32 @@ describe('tests Pokedex component', () => {
     expect(pokemonName).toBeInTheDocument();
     expect(pokemonName).toHaveTextContent('Pikachu');
   });
+
+  it('check if "Encountered Pokémon" appears on screen', () => {
+    renderWithRouter(<Pokedex
+      pokemonList={ pokemonList }
+      isPokemonFavoriteById={ isPokemonFavoriteByIdType }
+    />);
+
+    const title = screen.getByText('Encountered Pokémon');
+    expect(title).toBeInTheDocument();
+  });
+
+  it('check if "Próximo Pokémon" works', () => {
+    renderWithRouter(<Pokedex
+      pokemonList={ pokemonList }
+      isPokemonFavoriteById={ isPokemonFavoriteByIdType }
+    />);
+
+    const next = screen.getByText('Próximo Pokémon');
+    const pokemon = screen.getByText('Pikachu');
+
+    userEvent.click(next);
+
+    expect(pokemon).toHaveTextContent('Charmander');
+
+    userEvent.click(next);
+
+    expect(pokemon).toHaveTextContent('Caterpie');
+  });
 });
