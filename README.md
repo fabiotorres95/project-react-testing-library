@@ -8,3 +8,6 @@ Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua cr
 - quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
 - quais arquivos/pastas foram desenvolvidos pela Trybe.
 -->
+Projeto React Testing Library - Trybe curso Front-End seção 6: "Testes Automatizados com React Testing Library"
+
+Front-End - projeto 6 de 10
